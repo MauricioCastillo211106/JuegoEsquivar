@@ -12,10 +12,9 @@
             <Image url="@../../../assets/imgs/img.png" />
          </image>
       </ImageView>
-      <Button fx:id="preparar" layoutX="61.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#btnPrepararOnMouse" text="iniciar" />
       <Button fx:id="left" layoutX="326.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#btnLeftOnMouse" text="&lt;-" />
       <Button fx:id="right" layoutX="357.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#btnRightOnMouse" text="-&gt;" />
-      <ImageView fx:id="sylas" fitHeight="103.0" fitWidth="76.0" layoutX="319.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="sylass" fitHeight="103.0" fitWidth="76.0" layoutX="319.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/imgs/img_1.png" />
          </image>
