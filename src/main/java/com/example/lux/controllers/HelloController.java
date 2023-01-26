@@ -27,30 +27,40 @@ public class HelloController implements Observer {
     private AnchorPane rootScene;
 
     @FXML
-    private ImageView sylass;
-
-
+    private ImageView sylas;
 
 
     private sylas moveSylass;
 
+    @FXML
+    void btnPrepararOnMouse(MouseEvent event) {
+        moveSylass = new sylas();
+        moveSylass.setPos(new personaje(1,319,297));
+        moveSylass.addObserver(this);
+        Thread hilo1 = new Thread(moveSylass);
+        hilo1.start();
+        System.out.println("pasooo");
+
+    }
 
     @FXML
     void btnLeftOnMouse(MouseEvent event) {
         moveSylass.setLeftChange();
         moveSylass.setLeft(true);
-        System.out.println("Paso izquierda");
+        //System.out.println("Hola");
     }
 
     @FXML
     void btnRightOnMouse(MouseEvent event) {
-
+        moveSylass.setRightChange();
+        moveSylass.setRight(true);
+      //  System.out.println("pasooo");
     }
 
     @Override
     public void update(Observable o, Object arg) {
         personaje move = (personaje) arg;
-        sylass.setLayoutX(move.getX());
+        sylas.setLayoutX(move.getX());
 
     }
-    }
+}

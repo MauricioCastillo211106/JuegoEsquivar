@@ -12,19 +12,18 @@ public class sylas extends Observable implements Runnable {
 
     public sylas() {
         status = true;
-
     }
 
     public void setStatus(boolean status) {this.status = status;}
 
     public void setLeftChange(){
-        pos.setX(pos.getX() - 0);
+        pos.setX(pos.getX() + 0);
     }
     public void setLeft(boolean left) {
         this.left = left;
     }
 
-    public void setRightChange(){ pos.setX(pos.getX() - 0); }
+    public void setRightChange(){ pos.setX(pos.getX() + 0); }
     public void setRight(boolean right) {
         this.right = right;
     }
@@ -39,9 +38,7 @@ public class sylas extends Observable implements Runnable {
         this.pos = pos;
     }
 
-    public void moveSylas(){
-        status=true;
-    }
+
 
     @Override
     public void run() {
@@ -49,27 +46,27 @@ public class sylas extends Observable implements Runnable {
 
             setChanged();
             notifyObservers(pos);
+            //System.out.println("paso aquiiiiiii");
             try {
                 Thread.sleep(50L);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            /*if(pouPos.getPouX() >= 0 || pouPos.getPouX() <= 500 ){*/
-            if(left == true){
-                if(pos.getX() <= 290){
+            if(right == true){
+                if (pos.getX() <= 630){
                     pos.setX(pos.getX() + 10);
-                    System.out.println("Derecha");
-
+                    //System.out.println("Derecha");
                 }
-                left = false;
+                right= false;
             }
-            else if (right == true){
+            else if (left == true){
                 if (pos.getX() >= 0){
                     pos.setX(pos.getX() - 10);
-                    System.out.println("Izquierda");
+                    //System.out.println("Izquierda");
                 }
-                right=false;
+                left=false;
             }
+
     }
 
 }
