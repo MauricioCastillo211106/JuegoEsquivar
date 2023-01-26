@@ -1,6 +1,6 @@
 package com.example.lux.models;
 
-public class personaje {
+public class Personaje {
 
     private int id;
 
@@ -8,7 +8,7 @@ public class personaje {
 
     private int y;
 
-    public personaje(int id, int x, int y) {
+    public Personaje(int id, int x, int y) {
         this.id = id;
         this.x = x;
         this.y = y;

@@ -1,6 +1,6 @@
 package com.example.lux.controllers;
-import com.example.lux.models.personaje;
-import com.example.lux.models.sylas;
+import com.example.lux.models.Personaje;
+import com.example.lux.models.Sylas;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -45,11 +45,11 @@ public class HelloController implements Observer {
         rootScene.getChildren().add(personaje);*/
     }
 
-    private sylas jugador1;
+    private Sylas jugador1;
     @FXML
     void btnRightOnMouse(MouseEvent event) {
-        jugador1=new sylas();
-        jugador1.setPosicion(new personaje(1,319,297));
+        jugador1=new Sylas();
+        jugador1.setPosicion(new Personaje(1,319,297));
         jugador1.addObserver(this);
         new Thread(jugador1).start();
         System.out.printf("paso");
@@ -58,7 +58,7 @@ public class HelloController implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        personaje pos=(personaje) arg;
+        Personaje pos=(Personaje) arg;
         switch (pos.getId()){
             case    1:
                 Platform.runLater(()-> sylas.setLayoutX(pos.getX()));
