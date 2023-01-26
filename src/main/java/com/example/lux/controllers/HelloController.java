@@ -15,11 +15,10 @@ import java.util.Observer;
 
 public class HelloController implements Observer {
 
-    @FXML
-    private Button left;
+
 
     @FXML
-    private Button preparar;
+    private Button left;
 
     @FXML
     private Button right;
@@ -28,23 +27,22 @@ public class HelloController implements Observer {
     private AnchorPane rootScene;
 
     @FXML
-    private ImageView sylas;
+    private ImageView sylass;
 
-    private Circle personaje;
+
+
+
+    private sylas moveSylass;
+
 
     @FXML
     void btnLeftOnMouse(MouseEvent event) {
-
+        moveSylass.setLeftChange();
+        moveSylass.setLeft(true);
+        System.out.println("Paso izquierda");
     }
 
-    @FXML
-    void btnPrepararOnMouse(MouseEvent event) {
-        /*personaje= new Circle(27, Color.BLACK);
-        personaje.setLayoutX(380);
-        personaje.setCenterY(373);
-        rootScene.getChildren().add(personaje);*/
-    }
-
+<<<<<<< HEAD
     private Sylas jugador1;
     @FXML
     void btnRightOnMouse(MouseEvent event) {
@@ -54,15 +52,26 @@ public class HelloController implements Observer {
         new Thread(jugador1).start();
         System.out.printf("paso");
     }
+=======
+    @FXML
+    void btnRightOnMouse(MouseEvent event) {
+>>>>>>> 14420d344eacec7cd95eb8e724130d14215b0060
 
+    }
 
     @Override
     public void update(Observable o, Object arg) {
+<<<<<<< HEAD
         Personaje pos=(Personaje) arg;
         switch (pos.getId()){
             case    1:
                 Platform.runLater(()-> sylas.setLayoutX(pos.getX()));
                 break;
         }
+=======
+        personaje move = (personaje) arg;
+        sylass.setLayoutX(move.getX());
+
     }
-}
+>>>>>>> 14420d344eacec7cd95eb8e724130d14215b0060
+    }
